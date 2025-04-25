@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="zxx"
+    class=" sizes customelements history pointerevents postmessage postmessage-structuredclones webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            .tippy-iOS {
+                cursor: pointer !important
+            }
+
+            .tippy-notransition {
+                transition: none !important
+            }
+
+            .tippy-popper {
+                -webkit-perspective: 700px;
+                perspective: 700px;
+                z-index: 9999;
+                outline: 0;
+                transition-timing-function: cubic-bezier(.165, .84, .44, 1);
+                pointer-events: none;
+                line-height: 1.4
+            }
+
+            .tippy-popper[x-placement^=top] .tippy-backdrop {
+                border-radius: 40% 40% 0 0
+            }
+
+            .tippy-popper[x-placement^=top] .tippy-roundarrow {
+                bottom: -8px;
+                -webkit-transform-origin: 50% 0;
+                transform-origin: 50% 0
+            }
+
+            .tippy-popper[x-placement^=top] .tippy-roundarrow svg {
+                position: absolute;
+                left: 0;
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg)
+            }
+
+            .tippy-popper[x-placement^=top] .tippy-arrow {
+                border-top: 8px solid #333;
+                border-right: 8px solid transparent;
+                border-left: 8px solid transparent;
+                bottom: -7px;
+                margin: 0 6px;
+                -webkit-transform-origin: 50% 0;
+                transform-origin: 50% 0
+            }
+
+            .tippy-popper[x-placement^=top] .tippy-backdrop {
+                -webkit-transform-origin: 0 25%;
+                transform-origin: 0 25%
+            }
+
+            .tippy-popper[x-placement^=top] .tippy-backdrop[data-state=visible] {
+                -webkit-transform: scale(1) translate(-50%, -55%);
+                transform: scale(1) translate(-50%, -55%)
+            }
+
+            .tippy-popper[x-placement^=top] .tippy-backdrop[data-state=hidden] {
+                -webkit-transform: scale(.2) translate(-50%, -45%);
+                transform: scale(.2) translate(-50%, -45%);
+                opacity: 0
+            }
+
+            .tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=visible] {
+                -webkit-transform: translateY(-10px);
+                transform: translateY(-10px)
+            }
+
+            .tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateY(-20px);
+                transform: translateY(-20px)
+            }
+
+            .tippy-popper[x-placement^=top] [data-animation=perspective] {
+                -webkit-transform-origin: bottom;
+                transform-origin: bottom
+            }
+
+            .tippy-popper[x-placement^=top] [data-animation=perspective][data-state=visible] {
+                -webkit-transform: translateY(-10px) rotateX(0);
+                transform: translateY(-10px) rotateX(0)
+            }
+
+            .tippy-popper[x-placement^=top] [data-animation=perspective][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateY(0) rotateX(60deg);
+                transform: translateY(0) rotateX(60deg)
+            }
+
+            .tippy-popper[x-placement^=top] [data-animation=fade][data-state=visible] {
+                -webkit-transform: translateY(-10px);
+                transform: translateY(-10px)
+            }
+
+            .tippy-popper[x-placement^=top] [data-animation=fade][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateY(-10px);
+                transform: translateY(-10px)
+            }
+
+            .tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=visible] {
+                -webkit-transform: translateY(-10px);
+                transform: translateY(-10px)
+            }
+
+            .tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateY(0);
+                transform: translateY(0)
+            }
+
+            .tippy-popper[x-placement^=top] [data-animation=scale][data-state=visible] {
+                -webkit-transform: translateY(-10px) scale(1);
+                transform: translateY(-10px) scale(1)
+            }
+
+            .tippy-popper[x-placement^=top] [data-animation=scale][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateY(0) scale(.5);
+                transform: translateY(0) scale(.5)
+            }
+
+            .tippy-popper[x-placement^=bottom] .tippy-backdrop {
+                border-radius: 0 0 30% 30%
+            }
+
+            .tippy-popper[x-placement^=bottom] .tippy-roundarrow {
+                top: -8px;
+                -webkit-transform-origin: 50% 100%;
+                transform-origin: 50% 100%
+            }
+
+            .tippy-popper[x-placement^=bottom] .tippy-roundarrow svg {
+                position: absolute;
+                left: 0;
+                -webkit-transform: rotate(0);
+                transform: rotate(0)
+            }
+
+            .tippy-popper[x-placement^=bottom] .tippy-arrow {
+                border-bottom: 8px solid #333;
+                border-right: 8px solid transparent;
+                border-left: 8px solid transparent;
+                top: -7px;
+                margin: 0 6px;
+                -webkit-transform-origin: 50% 100%;
+                transform-origin: 50% 100%
+            }
+
+            .tippy-popper[x-placement^=bottom] .tippy-backdrop {
+                -webkit-transform-origin: 0 -50%;
+                transform-origin: 0 -50%
+            }
+
+            .tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=visible] {
+                -webkit-transform: scale(1) translate(-50%, -45%);
+                transform: scale(1) translate(-50%, -45%)
+            }
+
+            .tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=hidden] {
+                -webkit-transform: scale(.2) translate(-50%);
+                transform: scale(.2) translate(-50%);
+                opacity: 0
+            }
+
+            .tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=visible] {
+                -webkit-transform: translateY(10px);
+                transform: translateY(10px)
+            }
+
+            .tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateY(20px);
+                transform: translateY(20px)
+            }
+
+            .tippy-popper[x-placement^=bottom] [data-animation=perspective] {
+                -webkit-transform-origin: top;
+                transform-origin: top
+            }
+
+            .tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=visible] {
+                -webkit-transform: translateY(10px) rotateX(0);
+                transform: translateY(10px) rotateX(0)
+            }
+
+            .tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateY(0) rotateX(-60deg);
+                transform: translateY(0) rotateX(-60deg)
+            }
+
+            .tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=visible] {
+                -webkit-transform: translateY(10px);
+                transform: translateY(10px)
+            }
+
+            .tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateY(10px);
+                transform: translateY(10px)
+            }
+
+            .tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=visible] {
+                -webkit-transform: translateY(10px);
+                transform: translateY(10px)
+            }
+
+            .tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateY(0);
+                transform: translateY(0)
+            }
+
+            .tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=visible] {
+                -webkit-transform: translateY(10px) scale(1);
+                transform: translateY(10px) scale(1)
+            }
+
+            .tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateY(0) scale(.5);
+                transform: translateY(0) scale(.5)
+            }
+
+            .tippy-popper[x-placement^=left] .tippy-backdrop {
+                border-radius: 50% 0 0 50%
+            }
+
+            .tippy-popper[x-placement^=left] .tippy-roundarrow {
+                right: -16px;
+                -webkit-transform-origin: 33.33333333% 50%;
+                transform-origin: 33.33333333% 50%
+            }
+
+            .tippy-popper[x-placement^=left] .tippy-roundarrow svg {
+                position: absolute;
+                left: 0;
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg)
+            }
+
+            .tippy-popper[x-placement^=left] .tippy-arrow {
+                border-left: 8px solid #333;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+                right: -7px;
+                margin: 3px 0;
+                -webkit-transform-origin: 0 50%;
+                transform-origin: 0 50%
+            }
+
+            .tippy-popper[x-placement^=left] .tippy-backdrop {
+                -webkit-transform-origin: 50% 0;
+                transform-origin: 50% 0
+            }
+
+            .tippy-popper[x-placement^=left] .tippy-backdrop[data-state=visible] {
+                -webkit-transform: scale(1) translate(-50%, -50%);
+                transform: scale(1) translate(-50%, -50%)
+            }
+
+            .tippy-popper[x-placement^=left] .tippy-backdrop[data-state=hidden] {
+                -webkit-transform: scale(.2) translate(-75%, -50%);
+                transform: scale(.2) translate(-75%, -50%);
+                opacity: 0
+            }
+
+            .tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=visible] {
+                -webkit-transform: translateX(-10px);
+                transform: translateX(-10px)
+            }
+
+            .tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateX(-20px);
+                transform: translateX(-20px)
+            }
+
+            .tippy-popper[x-placement^=left] [data-animation=perspective] {
+                -webkit-transform-origin: right;
+                transform-origin: right
+            }
+
+            .tippy-popper[x-placement^=left] [data-animation=perspective][data-state=visible] {
+                -webkit-transform: translateX(-10px) rotateY(0);
+                transform: translateX(-10px) rotateY(0)
+            }
+
+            .tippy-popper[x-placement^=left] [data-animation=perspective][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateX(0) rotateY(-60deg);
+                transform: translateX(0) rotateY(-60deg)
+            }
+
+            .tippy-popper[x-placement^=left] [data-animation=fade][data-state=visible] {
+                -webkit-transform: translateX(-10px);
+                transform: translateX(-10px)
+            }
+
+            .tippy-popper[x-placement^=left] [data-animation=fade][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateX(-10px);
+                transform: translateX(-10px)
+            }
+
+            .tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=visible] {
+                -webkit-transform: translateX(-10px);
+                transform: translateX(-10px)
+            }
+
+            .tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateX(0);
+                transform: translateX(0)
+            }
+
+            .tippy-popper[x-placement^=left] [data-animation=scale][data-state=visible] {
+                -webkit-transform: translateX(-10px) scale(1);
+                transform: translateX(-10px) scale(1)
+            }
+
+            .tippy-popper[x-placement^=left] [data-animation=scale][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateX(0) scale(.5);
+                transform: translateX(0) scale(.5)
+            }
+
+            .tippy-popper[x-placement^=right] .tippy-backdrop {
+                border-radius: 0 50% 50% 0
+            }
+
+            .tippy-popper[x-placement^=right] .tippy-roundarrow {
+                left: -16px;
+                -webkit-transform-origin: 66.66666666% 50%;
+                transform-origin: 66.66666666% 50%
+            }
+
+            .tippy-popper[x-placement^=right] .tippy-roundarrow svg {
+                position: absolute;
+                left: 0;
+                -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg)
+            }
+
+            .tippy-popper[x-placement^=right] .tippy-arrow {
+                border-right: 8px solid #333;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+                left: -7px;
+                margin: 3px 0;
+                -webkit-transform-origin: 100% 50%;
+                transform-origin: 100% 50%
+            }
+
+            .tippy-popper[x-placement^=right] .tippy-backdrop {
+                -webkit-transform-origin: -50% 0;
+                transform-origin: -50% 0
+            }
+
+            .tippy-popper[x-placement^=right] .tippy-backdrop[data-state=visible] {
+                -webkit-transform: scale(1) translate(-50%, -50%);
+                transform: scale(1) translate(-50%, -50%)
+            }
+
+            .tippy-popper[x-placement^=right] .tippy-backdrop[data-state=hidden] {
+                -webkit-transform: scale(.2) translate(-25%, -50%);
+                transform: scale(.2) translate(-25%, -50%);
+                opacity: 0
+            }
+
+            .tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=visible] {
+                -webkit-transform: translateX(10px);
+                transform: translateX(10px)
+            }
+
+            .tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateX(20px);
+                transform: translateX(20px)
+            }
+
+            .tippy-popper[x-placement^=right] [data-animation=perspective] {
+                -webkit-transform-origin: left;
+                transform-origin: left
+            }
+
+            .tippy-popper[x-placement^=right] [data-animation=perspective][data-state=visible] {
+                -webkit-transform: translateX(10px) rotateY(0);
+                transform: translateX(10px) rotateY(0)
+            }
+
+            .tippy-popper[x-placement^=right] [data-animation=perspective][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateX(0) rotateY(60deg);
+                transform: translateX(0) rotateY(60deg)
+            }
+
+            .tippy-popper[x-placement^=right] [data-animation=fade][data-state=visible] {
+                -webkit-transform: translateX(10px);
+                transform: translateX(10px)
+            }
+
+            .tippy-popper[x-placement^=right] [data-animation=fade][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateX(10px);
+                transform: translateX(10px)
+            }
+
+            .tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=visible] {
+                -webkit-transform: translateX(10px);
+                transform: translateX(10px)
+            }
+
+            .tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateX(0);
+                transform: translateX(0)
+            }
+
+            .tippy-popper[x-placement^=right] [data-animation=scale][data-state=visible] {
+                -webkit-transform: translateX(10px) scale(1);
+                transform: translateX(10px) scale(1)
+            }
+
+            .tippy-popper[x-placement^=right] [data-animation=scale][data-state=hidden] {
+                opacity: 0;
+                -webkit-transform: translateX(0) scale(.5);
+                transform: translateX(0) scale(.5)
+            }
+
+            .tippy-tooltip {
+                position: relative;
+                color: #fff;
+                border-radius: 4px;
+                font-size: .9rem;
+                padding: .3rem .6rem;
+                max-width: 350px;
+                text-align: center;
+                will-change: transform;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                background-color: #333
+            }
+
+            .tippy-tooltip[data-size=small] {
+                padding: .2rem .4rem;
+                font-size: .75rem
+            }
+
+            .tippy-tooltip[data-size=large] {
+                padding: .4rem .8rem;
+                font-size: 1rem
+            }
+
+            .tippy-tooltip[data-animatefill] {
+                overflow: hidden;
+                background-color: transparent
+            }
+
+            .tippy-tooltip[data-interactive],
+            .tippy-tooltip[data-interactive] path {
+                pointer-events: auto
+            }
+
+            .tippy-tooltip[data-inertia][data-state=visible] {
+                transition-timing-function: cubic-bezier(.53, 2, .36, .85)
+            }
+
+            .tippy-tooltip[data-inertia][data-state=hidden] {
+                transition-timing-function: ease
+            }
+
+            .tippy-arrow,
+            .tippy-roundarrow {
+                position: absolute;
+                width: 0;
+                height: 0
+            }
+
+            .tippy-roundarrow {
+                width: 24px;
+                height: 8px;
+                fill: #333;
+                pointer-events: none
+            }
+
+            .tippy-backdrop {
+                position: absolute;
+                will-change: transform;
+                background-color: #333;
+                border-radius: 50%;
+                width: calc(110% + 2rem);
+                left: 50%;
+                top: 50%;
+                z-index: -1;
+                transition: all cubic-bezier(.46, .1, .52, .98);
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden
+            }
+
+            .tippy-backdrop:after {
+                content: "";
+                float: left;
+                padding-top: 100%
+            }
+
+            .tippy-backdrop+.tippy-content {
+                transition-property: opacity
+            }
+
+            .tippy-backdrop+.tippy-content[data-state=visible] {
+                opacity: 1
+            }
+
+            .tippy-backdrop+.tippy-content[data-state=hidden] {
+                opacity: 0
+            }
+
+            @media (max-width:360px) {
+                .tippy-popper {
+                    max-width: 96%;
+                    max-width: calc(100% - 20px)
+                }
+            }
+        </style>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Privacy Policy
+            | Yash</title>
+        <meta name="robots" content="index, follow">
+        <meta name="description"
+            content="Pronia plant store bootstrap 5 template is an awesome website template for any home plant shop.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf-token" content="sqonoyMUm6JNNZu3IQYrrw89jCnslzsm0FPUr29Y">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/front/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/front/images/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/front/images/favicons/favicon-16x16.png">
+
+        <link rel="stylesheet" href="./privacy-policy_files/bootstrap.min.css">
+        <link rel="stylesheet" href="./privacy-policy_files/font-awesome.min.css">
+        <link rel="stylesheet" href="./privacy-policy_files/Pe-icon-7-stroke.css">
+        <link rel="stylesheet" href="./privacy-policy_files/animate.min.css">
+        <link rel="stylesheet" href="./privacy-policy_files/swiper-bundle.min.css">
+        <link rel="stylesheet" href="./privacy-policy_files/nice-select.css">
+        <link rel="stylesheet" href="./privacy-policy_files/magnific-popup.min.css">
+        <link rel="stylesheet" href="./privacy-policy_files/ion.rangeSlider.min.css">
+
+        <link rel="stylesheet" href="./privacy-policy_files/style.css">
+
+        <link href="./privacy-policy_files/alertify.min.css" rel="stylesheet">
+
+        <style>
+            .custom-text-black {
+                color: #525252 !important;
+                font-size: 18px !important;
+            }
+        </style>
+    </head>
+
+    <body data-new-gr-c-s-check-loaded="14.1232.0" data-gr-ext-installed="">
+        <div class="preloader-activate open_tm_preloader loaded">
+            <div class="preloader-area-wrap">
+                <div class="spinner d-flex justify-content-center align-items-center h-100">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-wrapper">
+            <header class="main-header-area">
+                <div class="header-middle py-30">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-12">
+                                <div class="header-middle-wrap position-relative">
+                                    <div class="header-contact d-none d-lg-flex">
+                                        <i class="pe-7s-call"></i>
+                                        <a href="tel://+919998833153">+91 99988-33153</a>
+                                    </div>
+
+                                    <a href="/" class="header-logo">
+                                        <img src="./privacy-policy_files/small_logo.png" alt="Company Logo" width="120">
+                                    </a>
+
+                                    <div class="header-right">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-bottom d-none d-lg-block">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="main-menu position-relative">
+                                    <nav class="main-nav">
+                                        <ul>
+                                            <li>
+                                                <a href="/">Home</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/about-us">About Us</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/contact-us">Contact Us</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-sticky py-4 py-lg-0 sticky">
+                    <div class="container">
+                        <div class="header-nav position-relative">
+                            <div class="row align-items-center">
+                                <div class="col-lg-3 col-6">
+
+                                    <a href="/" class="header-logo">
+                                        <img src="./privacy-policy_files/small_logo.png" alt="Company Logo" width="120">
+                                    </a>
+
+                                </div>
+                                <div class="col-lg-6 d-none d-lg-block">
+                                    <div class="main-menu">
+                                        <nav class="main-nav">
+                                            <ul>
+                                                <li>
+                                                    <a href="/">Home</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="/about-us">About Us</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="/contact-us">Contact Us</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-6">
+                                    <div class="header-right">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile-menu_wrapper" id="mobileMenu">
+                    <div class="offcanvas-body">
+                        <div class="inner-body">
+                            <div class="offcanvas-top">
+                                <a class="button-close"><i class="pe-7s-close"></i></a>
+                            </div>
+                            <div class="header-contact offcanvas-contact">
+                                <i class="pe-7s-call"></i>
+                                <a href="tel://+919998833153">+91 99988-33153</a>
+                            </div>
+                            <div class="offcanvas-user-info">
+                                <ul class="dropdown-wrap">
+                                    <li class="dropdown">
+                                        <button class="btn btn-link dropdown-toggle ht-btn p-0" type="button"
+                                            id="settingButtonTwo" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="pe-7s-users"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingButtonTwo">
+                                            <li>
+                                                <a class="dropdown-item" href="/login-register">
+                                                    Login | Register
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="offcanvas-menu_area">
+                                <nav class="offcanvas-navigation">
+                                    <ul class="mobile-menu">
+                                        <li>
+                                            <a href="/">
+                                                <span class="mm-text">
+                                                    Home
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/categories">
+                                                <span class="mm-text">
+                                                    Shop
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/about-us">
+                                                About Us
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/contact-us">
+                                                Contact Us
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offcanvas-minicart_wrapper" id="miniCart">
+                    <div class="offcanvas-body">
+                        <div class="minicart-content">
+                            <div class="minicart-heading">
+                                <h4 class="mb-0">Shopping Cart</h4>
+                                <a href="/privacy-policy#" class="button-close">
+                                    <i class="pe-7s-close" data-tippy="Close" data-tippy-inertia="true"
+                                        data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true"
+                                        data-tippy-theme="sharpborder" tabindex="0"></i>
+                                </a>
+                            </div>
+
+                            <ul class="minicart-list" id="cart-container"></ul>
+                        </div>
+
+                        <div class="minicart-item_total">
+                            <span>Subtotal</span>
+                            <span class="ammount">₹ <span class="cart-total">0</span></span>
+                        </div>
+
+                        <div class="group-btn_wrap d-grid gap-2">
+                            <a href="/checkout" class="btn btn-dark">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="global-overlay"></div>
+            </header>
+
+            <template id="cart-item-template"></template>
+
+
+            <div class="breadcrumb-area breadcrumb-height"
+                data-bg-image="/assets/front/images/breadcrumb/bg/1-1-1919x388.jpg"
+                style="background-image: url(&quot;/assets/front/images/breadcrumb/bg/1-1-1919x388.jpg&quot;);">
+                <div class="container h-100">
+                    <div class="row h-100">
+                        <div class="col-lg-12">
+                            <div class="breadcrumb-item">
+                                <h2 class="breadcrumb-heading">Privacy Policy</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-area section-space-y-axis-100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>
+                                This document is an electronic record in terms of Information Technology Act, 2000 and
+                                rules there under as applicable and the provisions pertaining to electronic records in
+                                various statutes as amended by the Information Technology Act, 2000. This electronic
+                                record is generated by a computer system and does not require any physical or digital
+                                signatures to make the terms of this policy binding.
+                            </p>
+
+                            <p>
+                                At yashpump.in data protection is a matter of trust and your privacy is very important
+                                to us. We use your personal information only in the manner set out in this Privacy
+                                Policy. Please read this privacy policy to learn more about our information gathering
+                                and dissemination practices.
+                            </p>
+
+                            <p>
+                                The privacy practices of this statement apply to our services available under the domain
+                                and sub-domains of yashpump.in (the "Site") and apply generally to our parent,
+                                affiliates, subsidiaries or joint venture websites. By visiting the Site you agree to be
+                                bound by the terms and conditions of this Privacy Policy.
+                            </p>
+
+                            <p>
+                                This Privacy Policy explains how yashpump.in gathers personal information, classified as
+                                mandatory or optional as part of the normal operation of our services; and uses,
+                                discloses and protects such information through the Site. This detailed privacy policy
+                                enables you to take informed decisions in dealings with us. Our parent, subsidiaries and
+                                joint ventures operate under similar privacy practices subject to the requirements of
+                                applicable law.
+                            </p>
+
+                            <p>
+                                By registering with yashpump.in, you acknowledge your acceptance of the terms of this
+                                Privacy Policy, expressly consent to our use and disclosure of your personal information
+                                in accordance with this Privacy Policy and that any personal information provided by you
+                                through yashpump.in is provided under a lawful contract. This Privacy Policy is
+                                incorporated into and subject to the terms of the User Agreement cha. Our privacy policy
+                                is subject to change at any time without notice. To be aware of any changes, please
+                                review this policy periodically.
+                            </p>
+
+                            <h4>Your Privacy</h4>
+                            <p>
+                                At yashpump.in, we are extremely proud of our commitment to protect your privacy. We
+                                value your trust in us. We work hard to earn your confidence so that you can
+                                enthusiastically use our services and recommend your friends and family to participate
+                                in dealing with us. Please read the following policy to understand how your personal
+                                information will be treated as you make full use of our Site.
+                            </p>
+
+                            <h4>yashpump.in Privacy Assurance</h4>
+
+                            <p>
+                                yashpump.in promises that we will not sell or rent your personal information to third
+                                parties for their marketing purposes without your explicit consent. From time to time we
+                                may reveal general statistical information about our Web site and visitors, such as
+                                number of visitors, number and type of goods and services purchased, etc. Your trust and
+                                confidence are our highest priority.
+                            </p>
+
+                            <h4>Information that yashpump.in collects</h4>
+
+                            <p>
+                                When you use our Site, we collect and store your personal information. We gather your
+                                personal information to record, support and facilitate your participation in the
+                                activities you select, track your preferences, to provide you with a customized Site
+                                experience, to notify you of any updated information and new activities and other
+                                related functions offered by yashpump.in, keep you informed about latest content
+                                available on the Site, special offers, and other products and services of YASHPUMP, to
+                                assist you with customer service or technical support issues, to follow up with you
+                                after your visit, to otherwise support your relationship with YASHPUMP or to prevent
+                                fraud and unlawful use. For the aforesaid purpose, we only collect such personal
+                                information that we consider relevant to understand you and your interests.
+                                <br>
+                                <br>
+                                In general, you can visit the Site without having to provide your personal information
+                                during which time you remain anonymous and at no time can we identify you unless you
+                                have an account on the Site and log on with your user name and password. Once you
+                                provide your personal information, you are no more anonymous to us. To fully use our
+                                Site, you will need to register using our online registration form, where you may be
+                                required to provide us with your name, date of birth, contact number, email id, user id,
+                                password, residence / place of business information, billing information, shipping
+                                information, bank account details and other personal information as indicated on the
+                                forms throughout the Site. Further the fields are marked as mandatory or optional. You
+                                always have the option to not provide information by choosing not to use a particular
+                                service or feature on the Site. You may provide us with your yashpump.in registered user
+                                ID. We may automatically track certain information about you based upon your behavior on
+                                our site. We use this information to analyze trends, administer the site, track a user’s
+                                movement and gather broad demographic information, to better understand, protect and
+                                serve our users. This information is compiled and analyzed on an aggregated basis. This
+                                information may include the URL that you just came from (whether this URL is on our site
+                                or not), which URL you next go to (whether this URL is on our site or not), your
+                                computer browser information, and your IP address.
+
+                                <br>
+                                <br>
+
+                                We use data collection devices such as "cookies" on certain pages of the Site to help
+                                analyze our web page flow, measure promotional effectiveness, and promote trust and
+                                safety. "Cookies" are small files which identify your computer to our server as a unique
+                                user when you visit certain pages on the Site and they are stored by your Internet
+                                browser on your computer's hard drive. We offer certain features that are only available
+                                through the use of a "cookie". We also use cookies to allow you to enter your password
+                                less frequently during a session. Cookies can also help us provide information that is
+                                targeted to your interests. Most cookies are "session cookies," meaning that they are
+                                automatically deleted from your hard drive at the end of a session. You are always free
+                                to decline our cookies if your browser permits, although in that case you may not be
+                                able to use full functionality of the Site. We only use cookies for your convenience in
+                                using the Site and not for obtaining or using any other information about you. We do not
+                                control the use of cookies by third parties.
+                                <br>
+                                <br>
+
+                                If you choose to buy or sell on the Site, we collect information about your buying and
+                                selling behavior.
+
+                                <br>
+                                <br>
+
+                                If you are a seller, we also collect some additional information, such as a billing
+                                address, banking information other payment instrument details and tracking information
+                                from cheques or money orders.
+
+                                <br>
+                                <br>
+
+                                If you choose to post messages on our message boards, chat rooms or other message areas
+                                or leave feedback for other users, we retain this information as necessary to resolve
+                                disputes, provide customer support and troubleshoot problems as permitted by law.
+                                <br>
+                                <br>
+
+                                If you send us personal correspondence, such as emails or letters, or if other users or
+                                third parties send us correspondence about your activities or postings on the Site, we
+                                may collect such information into a file specific to you.
+                                <br>
+                                <br>
+
+                                If you register for the Site on another web site or use a web site providing a service
+                                for YASHPUMP or a web site that helps facilitates your activity on the Site, that web
+                                site may provide personal information about you and your transactions back to us.
+                            </p>
+
+                            <h4>Our use of your information</h4>
+
+                            <p>
+                                We use your personal information to facilitate the services you request. We do not sell,
+                                rent, trade or exchange any personally-identifying information of our Users. We may
+                                provide your collected information to our affiliates and service providers under
+                                contract (such as customer care, data analytics) to support the operation of the Website
+                                and our services. To the extent we use your personal information to market to you, we
+                                will provide you the ability to opt-out of such uses. We use your personal information
+                                ,to resolve disputes; troubleshoot problems; help promote safe trading; collect fees
+                                owed; measure consumer interest in the services provided by us, inform you about online
+                                and offline offers, products, services, and updates; customize your experience; detect
+                                and protect us against error, fraud and other criminal activity; enforce our User
+                                Agreement, and in general to improve the user experience and make it comparable to other
+                                e-commerce websites; and as otherwise described to you at the time of collection. In our
+                                efforts to continually improve our product and service offerings, we collect and analyze
+                                demographic, profile and usage data about our users' activity on our Site.
+                                <br><br>
+
+                                We use your personal information to improve our platform, improve the Site's content and
+                                product offerings, prevent or detect fraud or abuses of our website and tailor it to
+                                meet your needs, so as to provide you with a smooth, efficient, safe and customized
+                                experience while using the Site.
+                                <br><br>
+
+                                We may also use your personal information to display contents and services that are
+                                targeted to your interests. By accepting the User Agreement and Privacy Policy, you
+                                expressly agree to receive this information. If you do not wish to receive these
+                                communications, we encourage you to opt out of the receipt of certain communications in
+                                your profile under My Account or by clicking unsubscribe any email communication. You
+                                may make changes to your profile at any time.
+                            </p>
+
+                            <h4>Our Disclosure of your information</h4>
+
+                            <p>
+                                Your personal information is an important part of our business and we are not in the
+                                business of selling it to others. myeshop.in shares your personal information only to
+                                categories of persons that are either subject to this Privacy Policy or follow practices
+                                at least as protective as those described in this Privacy Policy as more particularly
+                                described below:
+                            </p>
+
+                            <h4>Advertisements</h4>
+
+                            <ul>
+                                <li>
+                                    Where a user enters information on any form of an advertiser, the information is
+                                    simultaneously collected by yashpump.in and the advertiser. The information is used
+                                    by yashpump.in in accordance with the terms of this privacy policy and is used by
+                                    the advertiser as per the advertiser’s prevalent privacy policies. Since we do not
+                                    control the privacy practices of these advertisers, you should evaluate their
+                                    practices before deciding to provide the said information.
+                                </li>
+
+                                <li>
+                                    yashpump.in may also use personally identifiable information in an aggregated form
+                                    and disclose to advertisers and other third parties for other marketing and
+                                    promotional purposes.
+                                </li>
+                            </ul>
+
+                            <h4>Classifieds Listings</h4>
+
+                            <p>
+                                When a user lists a classified advertisement, and the advertisement receives an
+                                expression of interest by the interested user, the interested user will be provided the
+                                contact information of the user listing the advertisement as provided in the user's
+                                registration form.
+                            </p>
+
+                            <h4>Items and Services offered on the Site by third parties</h4>
+
+                            <p>
+                                There are certain items and services for which third parties request for information to
+                                perform services on our behalf. The information provided by the user for such purposes
+                                is simultaneously collected by yashpump.in and the respective third party. This
+                                information is utilized by the third party in accordance with its privacy policy and the
+                                terms of the offer. Because we do not control the privacy practices of these third
+                                parties, you should evaluate their practices before deciding to use their services.
+                            </p>
+                            <h4>Internal Service Providers</h4>
+
+                            <p>
+                                We may employ third parties services to facilitate or outsource one or more aspects of
+                                the business, product and service operations that we provide to you on the Site like,
+                                search technology, discussion boards, bill collection, affiliate and rewards programs,
+                                co-branded credit cards and therefore we may provide some of your personal information
+                                to these internal service providers. These internal service providers are subject to
+                                confidentiality agreements with us and other legal restrictions that prohibit their use
+                                of your personal information for any other purpose except to facilitate the specific
+                                outsourced service. In the event of your direct involvement with the internal service
+                                provider, any additional information disclosed by you to them shall be subject to
+                                internal service provider’s own applicable privacy policy and the myeshop.in shall not
+                                be responsible for the same.
+                            </p>
+                            <h4>Other Corporate Entities</h4>
+
+                            <p>
+                                We share much of our data, including personal information about you, with our parent,
+                                affiliates, subsidiaries, and joint ventures that are committed to serving your online
+                                trading needs and related services, throughout the world. To the extent that these
+                                entities have access to your personal information, they remain bound by the existing
+                                Privacy Policy. As we continue to develop our business, we might sell or buy stores,
+                                subsidiaries or business units. In such transactions, customer’s personal information
+                                generally is one of the transferred business assets but remains subject to the promises
+                                made in any pre-existing Privacy Policy.
+                            </p>
+                            <h4>Legal Requests</h4>
+
+                            <p>
+                                We cooperate with law enforcement and regulatory inquiries, as well as other third
+                                parties to enforce laws, such as: intellectual property rights, fraud and other rights,
+                                to help protect you and the community from bad actors. Therefore, in response to a
+                                verified request by law enforcement or other government officials relating to a criminal
+                                investigation or alleged illegal activity, we may and you authorize us to disclose some
+                                of your personal information as is reasonably necessary to respond to subpoenas, court
+                                orders, or other legal process. We may disclose personal information to law enforcement
+                                offices, third party rights owners, or others in the good faith belief that such
+                                disclosure is reasonably necessary to enforce our Terms or Privacy Policy, respond to
+                                claims that an advertisement, posting or other content violates the rights of a third
+                                party, or protect the rights, property or personal safety of our users or the general
+                                public.
+                            </p>
+                            <h4>Your use of other users' information</h4>
+
+                            <p>
+                                In order to facilitate interaction among all yashpump.in members (buyers, sellers,
+                                service providers such as payment gateway and 3PLs, our Site allows you to access other
+                                users' contact information. Further, as a seller you will be sent via email the
+                                yashpump.in registered user ID email address and other information, and as a winning
+                                buyer you will be sent via email the yashpump.in registered user ID email address and
+                                other information of the seller. By entering into our User Agreement, you agree that,
+                                with respect to other user's personally identifiable information that you obtain through
+                                the Site or through a yashpump.in-related communication or yashpump-facilitated
+                                transaction, yahspump.in hereby grants to you a license to use such information only
+                                for:
+                                <br><br>
+                                (a). yashpump.-related communications that are not unsolicited commercial messages
+                                <br><br>
+                                (b). using co-branded services offered through yashpump.in like insurance, shipping and
+                                fraud complaints, and
+                                <br><br>
+                                (c). any other purpose that such user expressly opts into after adequate disclosure of
+                                the purpose(s).
+
+                                <br><br>
+                                In all cases, you must give users an opportunity to remove themselves from your database
+                                and a chance to review what information you have collected about them. In addition,
+                                under no circumstances, except as defined in this Section, can you disclose personally
+                                identifiable information about another user to any third party without our consent and
+                                the consent of such other user after adequate disclosure.
+                                <br><br>
+
+                                yashpump.in and our users do not tolerate spam. Therefore, without limiting the
+                                foregoing, you are not licensed to add a myeshop.in user-even a user who has purchased
+                                an item from you-to your mail list (email or physical mail) without their express
+                                consent after adequate disclosure.
+                            </p>
+                            <h4>What about children's privacy?</h4>
+
+                            <p>
+                                Use of yashpump.in is available only to persons who can form a legally binding contract
+                                under the Indian Contract Act, 1872. If you are under the age of 18, you cannot buy or
+                                sell any items on the Site. If you wish to purchase or sell an item on the Site such
+                                purchase or sale may be made by your legal guardian or parents who have registered as
+                                users of the Site.
+                            </p>
+                            <h4>Access or change your personally identifiable information</h4>
+
+                            <p>
+                                To protect your privacy and security, we will verify your identity before granting
+                                access or making changes to your personally identifying information. If you have
+                                registered your profile on yashpump.in, your registered user ID and Password are
+                                required in order to access your profile information.
+                            </p>
+                            <h4>Security</h4>
+
+                            <p>
+                                When you place orders or access your account information, we offer the use of a secure
+                                server. The secure server software (SSL) encrypts all information you put in before it
+                                is sent to us. Once your information is in our possession we adhere to strict security
+                                guidelines in compliance with the (Indian) Information Technology Act, 2000, protecting
+                                it against unauthorized access.
+                            </p>
+                            <h4>Your Consent</h4>
+
+                            <p>
+                                By using the Site and/ or by providing your information, you acknowledge our use of your
+                                personal information in the manner as set out in this Privacy Policy. Any changes to our
+                                privacy policy will be communicated through our Web site at least 10 days in advance of
+                                implementation. Name and address of the entity collecting and retaining your information
+                                shall be the contracting entity stated in the yashpump.in User Agreement.
+                            </p>
+                            <h4>Grievance Officer:</h4>
+
+                            <p>
+                                In accordance with Information Technology Act 2000 and rules made there under, the name
+                                and contact details of the Grievance Officer are published on the Site in User
+                                Agreement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Begin Footer Area -->
+            <div class="footer-area" data-bg-image="/assets/front/images/footer/bg/1-1920x465.jpg"
+                style="background-image: url(&quot;/assets/front/images/footer/bg/1-1920x465.jpg&quot;);">
+                <div class="footer-top section-space-top-100 pb-60">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="footer-widget-item">
+                                    <div class="footer-widget-logo text-center">
+                                        <a href="/">
+                                            <img src="./privacy-policy_files/small_logo.png" alt="Company Logo"
+                                                width="120">
+                                        </a>
+                                    </div>
+
+                                    <p class="footer-widget-desc">
+                                        Yash Pump have been serving the needs of Modern pump since 1993.
+                                        Our mission is to continually strive to improve our efficiency and customer
+                                        service.
+                                    </p>
+
+                                    <div class="social-link with-border">
+                                        <ul>
+                                            <li>
+                                                <a href="https://www.facebook.com/YashManufactures/"
+                                                    data-tippy="Facebook" data-tippy-inertia="true"
+                                                    data-tippy-animation="shift-away" data-tippy-delay="50"
+                                                    data-tippy-arrow="true" data-tippy-theme="sharpborder"
+                                                    target="_blank">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="https://www.instagram.com/yashmanufactures"
+                                                    data-tippy="Instagram" data-tippy-inertia="true"
+                                                    data-tippy-animation="shift-away" data-tippy-delay="50"
+                                                    data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                                    <i class="fa fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 pt-40">
+                                <div class="footer-widget-item">
+                                    <h3 class="footer-widget-title">Useful Links</h3>
+
+                                    <ul class="footer-widget-list-item">
+                                        <li>
+                                            <a href="/terms-conditions">Terms &amp; Conditions</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="/about-us">About US</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="/contact-us">Contact US</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 pt-40">
+                                <div class="footer-widget-item">
+                                    <h3 class="footer-widget-title">Our Service</h3>
+                                    <ul class="footer-widget-list-item">
+                                        <li>
+                                            <a href="/returns">Returns</a>
+                                        </li>
+                                        <li>
+                                            <a href="/shipping">Shipping</a>
+                                        </li>
+                                        <li>
+                                            <a href="/privacy-policy">Privacy Policy</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 pt-40">
+                                <div class="footer-contact-info">
+                                    <h3 class="footer-widget-title">Got Question? Call Us</h3>
+                                    <a class="number" href="tel://+91-999-883-3153">+91-999-883-3153</a>
+                                    <div class="address">
+                                        <ul>
+                                            <li>
+                                                Jay Siyaram Industrial Estate, <br>
+                                                NH 27, Near Mira Udyog, <br>
+                                                Rajkot - 360003, Gujarat.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="copyright">
+                                    <span class="copyright-text">Copyright © <span id="current-year">2025</span>. All
+                                        rights reserved.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="scroll-to-top" href="/privacy-policy">
+                <i class="fa fa-angle-double-up"></i>
+            </a>
+        </div>
+
+        <script src="./privacy-policy_files/bootstrap.bundle.min.js"></script>
+        <script src="./privacy-policy_files/jquery-3.6.0.min.js"></script>
+        <script src="./privacy-policy_files/jquery-migrate-3.3.2.min.js"></script>
+        <script src="./privacy-policy_files/jquery.waypoints.js"></script>
+        <script src="./privacy-policy_files/modernizr-3.11.2.min.js"></script>
+        <script src="./privacy-policy_files/wow.min.js"></script>
+        <script src="./privacy-policy_files/swiper-bundle.min.js"></script>
+        <script src="./privacy-policy_files/jquery.nice-select.js"></script>
+        <script src="./privacy-policy_files/parallax.min.js"></script>
+        <script src="./privacy-policy_files/jquery.magnific-popup.min.js"></script>
+        <script src="./privacy-policy_files/tippy.min.js"></script>
+        <script src="./privacy-policy_files/ion.rangeSlider.min.js"></script>
+        <script src="./privacy-policy_files/mailchimp-ajax.js"></script>
+        <script src="./privacy-policy_files/jquery.counterup.js"></script>
+        <script src="./privacy-policy_files/main.js"></script>
+        <script src="./privacy-policy_files/alertify.min.js"></script>
+        <script>
+            document.getElementById("current-year").innerHTML = new Date().getFullYear();
+        </script>
+
+        <script>
+            alertify.set('notifier', 'position', 'top-right');
+        </script>
+        <div class="alertify-notifier ajs-top ajs-right"></div>
+
+
+        <script>
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        </script>
+    </body>
+</html>
